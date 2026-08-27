@@ -1,0 +1,5 @@
+.ai-detox/
+*.pyc
+__pycache__/
+scan.json
+report.json

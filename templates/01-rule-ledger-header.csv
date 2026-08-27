@@ -1,0 +1,1 @@
+rule_id,source_file,source_location,original_text,normalized_rule,category,scope,agent,severity,default_behavior,conflict,duplicate,incident_patch,ambiguity,testability,stale_status,scope_problem,cost_problem,security_status,capability_mismatch,circularity,recommendation,target_location,reason,confidence

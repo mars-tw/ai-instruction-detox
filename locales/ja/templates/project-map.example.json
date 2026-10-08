@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "project": {
+    "id": "ai-instruction-detox",
+    "name": "AI の指示の整理",
+    "root": ".",
+    "main_skill": "SKILL.md",
+    "workflow": "references/project-organization.md",
+    "owner": "repository-maintainer",
+    "purpose": "指示の統治とプロジェクトのスキル整理を担うパッケージのルート入口。この図は候補例です。",
+    "sources": ["README.md", "SKILL.md"]
+  },
+  "subprojects": [
+    {
+      "id": "references",
+      "name": "ガバナンスの判断基準",
+      "parent": "ai-instruction-detox",
+      "path": "references",
+      "skill": "references/.ai/SKILL.md",
+      "workflow": "references/.ai/workflow.md",
+      "owner": "repository-maintainer",
+      "purpose": "ガバナンスの判断基準と安全上の境界を維持します。サブスキルのパスはまだ適用されていません。",
+      "sources": ["references/project-organization.md"],
+      "dependencies": []
+    },
+    {
+      "id": "scripts",
+      "name": "決定論的なツール",
+      "parent": "ai-instruction-detox",
+      "path": "scripts",
+      "skill": "scripts/.ai/SKILL.md",
+      "workflow": "scripts/.ai/workflow.md",
+      "owner": "repository-maintainer",
+      "purpose": "ローカルのスキャンと経路検証のツールを提供します。サブスキルのパスはまだ適用されていません。",
+      "sources": ["scripts/detox-scan.py", "scripts/project-map.py"],
+      "dependencies": ["references"]
+    },
+    {
+      "id": "templates",
+      "name": "ガバナンスのテンプレート",
+      "parent": "ai-instruction-detox",
+      "path": "templates",
+      "skill": "templates/.ai/SKILL.md",
+      "workflow": "templates/.ai/workflow.md",
+      "owner": "repository-maintainer",
+      "purpose": "候補のガバナンス文書の形式を提供します。サブスキルのパスはまだ適用されていません。",
+      "sources": ["templates/project-main-skill.template.md", "templates/subproject-skill.template.md", "templates/project-workflow.template.md"],
+      "dependencies": ["references"]
+    }
+  ]
+}

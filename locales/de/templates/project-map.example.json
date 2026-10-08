@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "project": {
+    "id": "ai-instruction-detox",
+    "name": "AI-Anweisungsbereinigung",
+    "root": ".",
+    "main_skill": "SKILL.md",
+    "workflow": "references/project-organization.md",
+    "owner": "repository-maintainer",
+    "purpose": "Paket-Haupteinstieg für Anweisungs-Governance und Organisation von Projekt-Skills; dieses Diagramm ist ein Entwurfsbeispiel.",
+    "sources": ["README.md", "SKILL.md"]
+  },
+  "subprojects": [
+    {
+      "id": "references",
+      "name": "Governance-Kriterien",
+      "parent": "ai-instruction-detox",
+      "path": "references",
+      "skill": "references/.ai/SKILL.md",
+      "workflow": "references/.ai/workflow.md",
+      "owner": "repository-maintainer",
+      "purpose": "Governance-Kriterien und Sicherheitsgrenzen pflegen; die Teilprojekt-Skill-Pfade sind noch anzuwenden.",
+      "sources": ["references/project-organization.md"],
+      "dependencies": []
+    },
+    {
+      "id": "scripts",
+      "name": "Deterministische Werkzeuge",
+      "parent": "ai-instruction-detox",
+      "path": "scripts",
+      "skill": "scripts/.ai/SKILL.md",
+      "workflow": "scripts/.ai/workflow.md",
+      "owner": "repository-maintainer",
+      "purpose": "Werkzeuge für lokale Scans und Routing-Prüfungen bereitstellen; die Teilprojekt-Skill-Pfade sind noch anzuwenden.",
+      "sources": ["scripts/detox-scan.py", "scripts/project-map.py"],
+      "dependencies": ["references"]
+    },
+    {
+      "id": "templates",
+      "name": "Governance-Vorlagen",
+      "parent": "ai-instruction-detox",
+      "path": "templates",
+      "skill": "templates/.ai/SKILL.md",
+      "workflow": "templates/.ai/workflow.md",
+      "owner": "repository-maintainer",
+      "purpose": "Formate für Governance-Entwurfsdokumente bereitstellen; die Teilprojekt-Skill-Pfade sind noch anzuwenden.",
+      "sources": ["templates/project-main-skill.template.md", "templates/subproject-skill.template.md", "templates/project-workflow.template.md"],
+      "dependencies": ["references"]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "project": {
+    "id": "ai-instruction-detox",
+    "name": "AI Instruction Detox",
+    "root": ".",
+    "main_skill": "SKILL.md",
+    "workflow": "references/project-organization.md",
+    "owner": "repository-maintainer",
+    "purpose": "Package root entry for instruction governance and project skill organization; this map is a candidate example.",
+    "sources": ["README.md", "SKILL.md"]
+  },
+  "subprojects": [
+    {
+      "id": "references",
+      "name": "Governance Criteria",
+      "parent": "ai-instruction-detox",
+      "path": "references",
+      "skill": "references/.ai/SKILL.md",
+      "workflow": "references/.ai/workflow.md",
+      "owner": "repository-maintainer",
+      "purpose": "Maintain governance criteria and safety boundaries; subskill paths await application.",
+      "sources": ["references/project-organization.md"],
+      "dependencies": []
+    },
+    {
+      "id": "scripts",
+      "name": "Deterministic Tools",
+      "parent": "ai-instruction-detox",
+      "path": "scripts",
+      "skill": "scripts/.ai/SKILL.md",
+      "workflow": "scripts/.ai/workflow.md",
+      "owner": "repository-maintainer",
+      "purpose": "Provide local scanning and route validation tools; subskill paths await application.",
+      "sources": ["scripts/detox-scan.py", "scripts/project-map.py"],
+      "dependencies": ["references"]
+    },
+    {
+      "id": "templates",
+      "name": "Governance Templates",
+      "parent": "ai-instruction-detox",
+      "path": "templates",
+      "skill": "templates/.ai/SKILL.md",
+      "workflow": "templates/.ai/workflow.md",
+      "owner": "repository-maintainer",
+      "purpose": "Provide candidate governance document formats; subskill paths await application.",
+      "sources": ["templates/project-main-skill.template.md", "templates/subproject-skill.template.md", "templates/project-workflow.template.md"],
+      "dependencies": ["references"]
+    }
+  ]
+}

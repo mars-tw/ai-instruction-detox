@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "root": "REPLACE_WITH_APPROVED_ROOT",
+  "git_head": null,
+  "audited_at": "REPLACE_WITH_TIMESTAMP",
+  "applied_at": null,
+  "changes": []
+}

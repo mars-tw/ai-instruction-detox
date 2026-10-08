@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "project": {
+    "id": "ai-instruction-detox",
+    "name": "AI 指令排毒",
+    "root": ".",
+    "main_skill": "SKILL.md",
+    "workflow": "references/project-organization.md",
+    "owner": "repository-maintainer",
+    "purpose": "指令治理與專案技能整理的套件根入口；這份圖是候選範例。",
+    "sources": ["README.md", "SKILL.md"]
+  },
+  "subprojects": [
+    {
+      "id": "references",
+      "name": "治理判準",
+      "parent": "ai-instruction-detox",
+      "path": "references",
+      "skill": "references/.ai/SKILL.md",
+      "workflow": "references/.ai/workflow.md",
+      "owner": "repository-maintainer",
+      "purpose": "維護治理判準與安全邊界；子技能路徑尚待套用。",
+      "sources": ["references/project-organization.md"],
+      "dependencies": []
+    },
+    {
+      "id": "scripts",
+      "name": "確定性工具",
+      "parent": "ai-instruction-detox",
+      "path": "scripts",
+      "skill": "scripts/.ai/SKILL.md",
+      "workflow": "scripts/.ai/workflow.md",
+      "owner": "repository-maintainer",
+      "purpose": "提供本機掃描及路由驗證工具；子技能路徑尚待套用。",
+      "sources": ["scripts/detox-scan.py", "scripts/project-map.py"],
+      "dependencies": ["references"]
+    },
+    {
+      "id": "templates",
+      "name": "治理範本",
+      "parent": "ai-instruction-detox",
+      "path": "templates",
+      "skill": "templates/.ai/SKILL.md",
+      "workflow": "templates/.ai/workflow.md",
+      "owner": "repository-maintainer",
+      "purpose": "提供候選治理文件的格式；子技能路徑尚待套用。",
+      "sources": ["templates/project-main-skill.template.md", "templates/subproject-skill.template.md", "templates/project-workflow.template.md"],
+      "dependencies": ["references"]
+    }
+  ]
+}

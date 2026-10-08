@@ -81,7 +81,7 @@ dispatcher／orchestrator 注入的 runtime contract
 | 懸空引用 | 抽出檔內所有路徑，逐一 `test -e` |
 | 循環引用 | 畫「誰讀誰」有向圖找環 |
 | 舊備份仍被載入 | 檢查 `backups/`、`archive/`、`old/`、`*.bak` 是否在 Agent 搜尋範圍 |
-| 已搬移檔案的舊引用 | grep 舊路徑字串 |
+| 已搬移檔案的舊引用 | 搜尋舊路徑字串 |
 | skill 引用不存在的檔 | 解析 skill 內所有相對路徑 |
 | 部署副本與原始碼不同步 | 比對 assets 與已安裝位置的 hash |
 
@@ -133,3 +133,15 @@ Git 最後修改資訊（安全且容易取得時）
 | `專案/AGENTS.md` | 477 | 130KB | **與上檔 byte 級重複** | 該目錄 session | ⚠️ 規則分裂 |
 | `memories/MEMORY.md` | — | 125KB | 自動注入 Codex session | **每 session** | ⚠️ 未治理 |
 ```
+
+## 掃描器涵蓋範圍與人工補查
+
+`detox-scan.py` 是啟發式指令文字掃描，不代表上述清單都自動涵蓋。
+被引用的 README、工程設定、非支援格式及已部署副本需另外列入核准範圍。
+跳過或無法存取的項目記錄原因，不能視為已讀或已通過。
+
+預計變更的治理檔案，另記原始存在性、SHA-256、安全基準位置與候選 digest，
+依 `artifact-contracts.md` 建立 baseline manifest。只記 mtime 不足以安全套用。
+
+專案整理時加盤點：主專案、既有子專案、責任、技能入口、工作流程、
+依賴、實際維護者、移動計畫與尚未歸類的項目；產品程式碼只辨識位置，不搬動。

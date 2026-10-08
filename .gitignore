@@ -1,4 +1,6 @@
 .ai-detox/
+.audit-tmp/
+project-map-preview*/
 *.pyc
 __pycache__/
 scan.json
